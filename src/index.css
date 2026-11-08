@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { @apply bg-paper text-ink font-sans antialiased; }
+@layer components {
+  .btn { @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pine disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-pine text-white hover:bg-pineDark; }
+  .btn-ghost { @apply btn border border-ink/20 hover:bg-ink/5; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+.rise { animation: rise .25s ease-out }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none } }
